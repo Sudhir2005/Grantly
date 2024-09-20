@@ -73,3 +73,33 @@
 
 /* Ensure Navbar and Sidebar have appropriate styling */
 
+/* App.css */
+
+/* Global Gradient Background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right, #6a11cb, #2575fc); /* Gradient Colors */
+  color: #ffffff; /* Default text color */
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+/* Optional: Customize the container for better layout */
+.container {
+  padding: 20px; /* Add some padding */
+}
+
+/* Example styles for common elements */
+h1, h2, h3 {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+}
+
+button {
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+button:hover {
+  transform: scale(1.05); /* Slight scale effect on hover */
+}

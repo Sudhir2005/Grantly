@@ -70,7 +70,7 @@ const AddDocumentPage = () => {
   };
 
   const handleBackToHome = () => {
-    navigate('/'); // Redirect to home page
+    navigate('/home'); // Redirect to home page
   };
 
   return (

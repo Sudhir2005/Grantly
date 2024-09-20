@@ -3,44 +3,77 @@
 .search-page {
   padding: 20px;
   text-align: center;
+  background: linear-gradient(135deg, #f3f4f6, #e2e2e2);
+  min-height: 100vh;
+}
+
+.search-header {
+  font-size: 3rem; /* Increased font size */
+  margin-bottom: 20px;
+  color: #3a3a3a; /* Darker color for better contrast */
+  font-family: 'Arial', sans-serif; /* Change font family */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  letter-spacing: 2px; /* Increased letter spacing for elegance */
+  transition: color 0.3s; /* Transition for hover effect */
+}
+
+.search-header:hover {
+  color: #2575fc; /* Change color on hover */
 }
 
 .search-input {
-  width: 80%;
   padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
+  font-size: 1.2rem;
+  width: 60%;
+  max-width: 400px;
+  border: 2px solid #2575fc; /* Changed border to make it stand out */
   border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: #6a11cb; /* Change border color on focus */
 }
 
 .document-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .document-item {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
   padding: 15px;
   margin: 10px;
-  width: 80%;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
 }
 
-.document-item h2 {
-  margin: 0;
+.document-item:hover {
+  transform: translateY(-5px);
 }
 
-.document-item button {
-  background: #007bff;
-  color: white;
-  border: none;
+.document-image {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button {
   padding: 10px;
+  background-color: #2575fc;
+  color: #fff;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.document-item button:hover {
-  background: #0056b3;
+button:hover {
+  background-color: #6a11cb;
 }

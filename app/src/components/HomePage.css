@@ -1,25 +1,26 @@
 /* HomePage.css */
-
 .home-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #f9f9f9;
-  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient Background */
+  min-height: 100vh; /* Ensure it covers the full height of the viewport */
 }
 
 .home-page h1 {
-  font-size: 2.5rem;
-  color: #333;
   margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #fff; /* Change text color for better contrast */
   text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
 }
 
 .documents {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
   width: 100%;
   max-width: 1200px;
 }
@@ -27,14 +28,16 @@
 .document-box {
   background: white;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
 
 .document-box:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .document-box img {
@@ -43,23 +46,17 @@
   border-bottom: 2px solid #007bff;
 }
 
-.document-box h2 {
-  font-size: 1.2rem;
+.document-info {
   padding: 10px;
-  text-align: center;
-  color: #007bff;
 }
 
-@media (max-width: 768px) {
-  .home-page {
-    padding: 10px;
-  }
+.document-info h2 {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin: 0;
+}
 
-  .home-page h1 {
-    font-size: 2rem;
-  }
-
-  .document-box h2 {
-    font-size: 1rem;
-  }
+.document-info p {
+  font-size: 0.9rem;
+  color: #555;
 }

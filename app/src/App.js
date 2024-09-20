@@ -14,7 +14,7 @@ import './App.css';
 
 const App = () => {
   const location = useLocation();
-  const noFooterPaths = ['/login', '/create-account', '/forgot-pin', '/chatbot'];
+  const noFooterPaths = ['/', '/create-account', '/forgot-pin', '/chatbot'];
 
   return (
     <div className="App">
@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/add-document" element={<AddDocumentPage />} />
         <Route path="/chatbot" element={<ChatbotPage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<LoginPage />} />
         <Route path="/create-account" element={<CreateAccountPage />} />
         <Route path="/forgot-pin" element={<ForgotPinPage />} />
         <Route path="/document/:docId" element={<DocumentViewPage />} /> {/* Add the document view route */}
