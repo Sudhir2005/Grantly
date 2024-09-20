@@ -4,7 +4,7 @@
   height: 100vh;
   max-width: 100%;
   padding: 20px;
-  background-color: #f4f4f4;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
 }
 
 .chatbot-header {
@@ -17,8 +17,7 @@
 
 .back-button {
   text-decoration: none;
-  color: #007bff;
-  font-size: 18px;
+  font-size: 30px;
 }
 
 .chatbot-messages {
@@ -76,4 +75,5 @@
 
 .back-button{
   color: black;
+  background:#4facfe;
 }

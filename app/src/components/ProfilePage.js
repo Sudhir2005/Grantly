@@ -26,7 +26,7 @@ const ProfilePage = () => {
             <li onClick={() => handleNavigation('/search')}>Search</li>
             <li onClick={() => handleNavigation('/add-document')}>Add Document</li>
             <li onClick={() => handleNavigation('/chatbot')}>Chatbot</li>
-            <li onClick={() => handleNavigation('/')}>Logout</li>
+            <li onClick={() => handleNavigation('/login')}>Logout</li>
           </ul>
           <button onClick={toggleSidebar} className="close-button">Close</button>
         </div>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify'; // Import ToastContainer and toast
+import 'react-toastify/dist/ReactToastify.css'; // Import CSS for toastify
 import './LoginPage.css';
 
 const LoginPage = () => {
@@ -15,7 +17,18 @@ const LoginPage = () => {
     e.preventDefault();
     // Add authentication logic for Aadhaar and OTP
     if (aadhaar.length === 12 && otp.length === 6) {
-      navigate('/home'); // Redirect to home page on successful login
+      setError('');
+      toast.success('Successfully logged in!', {
+        position: "top-center",
+        autoClose: 2000, // Close after 2 seconds
+        hideProgressBar: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+      });
+      setTimeout(() => {
+        navigate('/home'); // Redirect to home page after 3 seconds
+      }, 3000);
     } else {
       setError('Invalid Aadhaar or OTP.');
     }
@@ -25,7 +38,18 @@ const LoginPage = () => {
     e.preventDefault();
     // Add authentication logic for Username and Security Pin
     if (username && securityPin) {
-      navigate('/home'); // Redirect to home page on successful login
+      setError('');
+      toast.success('Successfully logged in!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+      });
+      setTimeout(() => {
+        navigate('/home'); // Redirect to home page after 3 seconds
+      }, 3000);
     } else {
       setError('Invalid Username or Security Pin.');
     }
@@ -41,9 +65,11 @@ const LoginPage = () => {
 
   return (
     <div className="login-container">
+      <ToastContainer /> {/* Toast Container is necessary to render the toasts */}
+      
       <h2>Login Page</h2>
 
-      {error && <p className="error">{error}</p>}
+      {error && <p className="error">{error}</p>} {/* Error message */}
 
       <div className="login-type-selector">
         <button className={loginType === 'aadhaar' ? 'active' : ''} onClick={() => setLoginType('aadhaar')}>

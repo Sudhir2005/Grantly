@@ -1,0 +1,51 @@
+.document-view {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .document-image img {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .security-pin-check {
+    margin-top: 20px;
+  }
+  
+  .security-pin-check input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .security-pin-check button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .security-pin-check button:hover {
+    background-color: #45a049;
+  }
+  
+  .document-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .document-content button:hover {
+    background-color: #0056b3;
+  }
+  

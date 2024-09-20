@@ -1,0 +1,135 @@
+/* src/components/LandingPage.css */
+
+.landing-page {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+  }
+  
+  .landing-content {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+  }
+  
+  .landing-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    animation: drawText 2s ease-in-out forwards;
+    color: azure;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  @keyframes drawText {
+    0% {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    animation: fadeInText 2s ease-in;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  
+  .landing-login-btn {
+    position: relative;
+    padding: 0.75rem 2rem;
+    background-color: #ff5e62;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: fadeInButton 2.5s ease-in-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  
+  .landing-login-btn span {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .landing-login-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .landing-login-btn .ripple {
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.6s ease, opacity 0.4s ease;
+  }
+  
+  .landing-login-btn:active .ripple {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInButton {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Floating animated shapes */
+  .animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: url('https://cdn.svgator.com/images/2022/06/use-svg-as-background-image-particle-strokes.svg'); /* You can replace with your own SVG or image */
+    animation: floatShapes 10s linear infinite;
+  }
+  
+  @keyframes floatShapes {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+  

@@ -92,3 +92,8 @@ input:focus {
   text-decoration: underline;
 }
 
+.Toastify__toast--success {
+  background-color: #0a58ff; /* Success green background */
+  color: white;
+  
+}

@@ -1,3 +1,4 @@
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './components/HomePage';
@@ -8,26 +9,28 @@ import ProfilePage from './components/ProfilePage';
 import LoginPage from './components/LoginPage';
 import CreateAccountPage from './components/CreateAccountPage';
 import ForgotPinPage from './components/ForgotPinPage';
-import DocumentViewPage from './components/DocumentView'; // Import the new component
+import DocumentView from './components/DocumentView';
+import LandingPage from './components/LandingPage'; // New Landing Page
 import Footer from './components/Footer';
 import './App.css';
 
 const App = () => {
   const location = useLocation();
-  const noFooterPaths = ['/', '/create-account', '/forgot-pin', '/chatbot'];
+  const noFooterPaths = ['/login', '/create-account', '/forgot-pin', '/chatbot', '/'];
 
   return (
     <div className="App">
       <Routes>
+        <Route path="/" element={<LandingPage />} /> {/* Landing Page Route */}
         <Route path="/home" element={<HomePage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/add-document" element={<AddDocumentPage />} />
         <Route path="/chatbot" element={<ChatbotPage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/create-account" element={<CreateAccountPage />} />
         <Route path="/forgot-pin" element={<ForgotPinPage />} />
-        <Route path="/document/:docId" element={<DocumentViewPage />} /> {/* Add the document view route */}
+        <Route path="/document" element={<DocumentView />} />
       </Routes>
 
       {/* Conditional rendering of Footer */}
