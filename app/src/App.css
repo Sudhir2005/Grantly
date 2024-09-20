@@ -1,0 +1,75 @@
+/* General styles for App */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  margin-top: 60px; /* Adjust according to the height of Navbar */
+  margin-left: 250px; /* Adjust according to the width of Sidebar */
+  flex: 1;
+}
+
+.content {
+  padding: 2rem;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+  }
+  
+  .content {
+    margin-top: 2rem;
+    background-image: none;
+  }
+  
+  .navbar {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .sidebar ul {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar li {
+    padding: 0.5rem;
+  }
+}
+
+/* src/App.css */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+.page-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Ensure Navbar and Sidebar have appropriate styling */
+

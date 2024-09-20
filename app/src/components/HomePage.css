@@ -1,0 +1,65 @@
+/* HomePage.css */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+}
+
+.home-page h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.documents {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.document-box {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.document-box:hover {
+  transform: scale(1.05);
+}
+
+.document-box img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #007bff;
+}
+
+.document-box h2 {
+  font-size: 1.2rem;
+  padding: 10px;
+  text-align: center;
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    padding: 10px;
+  }
+
+  .home-page h1 {
+    font-size: 2rem;
+  }
+
+  .document-box h2 {
+    font-size: 1rem;
+  }
+}

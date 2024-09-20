@@ -1,0 +1,46 @@
+/* src/components/SearchPage.css */
+
+.search-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.search-input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.document-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.document-item {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+  width: 80%;
+}
+
+.document-item h2 {
+  margin: 0;
+}
+
+.document-item button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.document-item button:hover {
+  background: #0056b3;
+}
