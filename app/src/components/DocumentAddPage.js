@@ -130,7 +130,7 @@ const AddDocumentPage = () => {
             Back to Home
           </button>
           <h2>Document Uploaded Successfully!</h2>
-          <img src="success-image-url" alt="Success" className="success-image" />
+          <img src="https://i.pinimg.com/originals/4a/10/e3/4a10e39ee8325a06daf00881ac321b2f.gif" alt="Success" className="success-image" />
         </div>
       )}
     </div>

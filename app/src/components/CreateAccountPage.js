@@ -2,7 +2,6 @@ import React from 'react';
 import './CreateAccountPage.css';
 import { Link } from 'react-router-dom';
 
-
 const CreateAccountPage = () => {
   return (
     <div className="create-account-container">
