@@ -16,7 +16,7 @@ const LandingPage = () => {
       <div className="animated-background"></div> {/* Floating shapes */}
       
       <div className={`landing-content ${showContent ? 'visible' : ''}`}>
-        <h1 className="title">Welcome to Scholarship Portal</h1>
+        <h1 className="title">Welcome to Grantly</h1>
         <p>Your gateway to securing the best scholarships</p>
         <Link to="/login">
           <button className="landing-login-btn">

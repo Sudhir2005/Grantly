@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HomePage.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const [pin, setPin] = useState('');
   const [selectedDocId, setSelectedDocId] = useState(null);
   
   // Sample documents (replace with your actual documents)
@@ -16,13 +16,10 @@ const HomePage = () => {
     { id: 4, title: 'Document 4', imageUrl: 'https://www.pancardapp.com/blog/wp-content/uploads/2019/04/sample-pan-card.jpg' },
     { id: 5, title: 'Document 5', imageUrl: 'https://www.tesz.in/assets/guides/5ea2923ea0f76-img-165.jpg' },
     { id: 6, title: 'Document 6', imageUrl: 'https://th-i.thgim.com/public/news/national/tamil-nadu/ek15l0/article66450521.ece/alternates/LANDSCAPE_1200/New%20voter%20ID%20card%20in%20TN.jpg' },
-
-    
   ];
 
   const handleDocumentClick = (id) => {
     setSelectedDocId(id);
-    // Show a prompt for security pin (you could also use a modal)
     const enteredPin = prompt('Enter your 4-digit security pin:');
     if (enteredPin === '1234') { // Replace with actual pin check
       navigate(`/document/${id}`);
@@ -32,17 +29,18 @@ const HomePage = () => {
   };
 
   return (
-    <div className="home-page">
-      <h1>Grantly</h1>
-      <div className="documents">
+    <div className="container mt-4">
+      <h1 className="text-center mb-4" style={{ fontWeight: 'bold', color: '#2575fc' }}>Grantly</h1>
+      
+      <div className="row">
         {documents.map((doc) => (
-          <div
-            key={doc.id}
-            className="document-box"
-            onClick={() => handleDocumentClick(doc.id)}
-          >
-            <img src={doc.imageUrl} alt={doc.title} />
-            <h2>{doc.title}</h2>
+          <div className="col-md-4 col-sm-6 mb-4" key={doc.id}>
+            <div className="card h-100" onClick={() => handleDocumentClick(doc.id)} style={{ cursor: 'pointer' }}>
+              <img src={doc.imageUrl} className="card-img-top" alt={doc.title} style={{ height: '200px', objectFit: 'cover' }} />
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title text-center">{doc.title}</h5>
+              </div>
+            </div>
           </div>
         ))}
       </div>

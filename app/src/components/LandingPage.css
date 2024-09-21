@@ -54,18 +54,37 @@
   .landing-login-btn {
     position: relative;
     padding: 0.75rem 2rem;
-    background-color: #ff5e62;
+    background: linear-gradient(135deg, #ff5e62, #ff9966); /* Gradient background */
     border: none;
     color: white;
     font-size: 1.25rem;
     border-radius: 25px;
     cursor: pointer;
     overflow: hidden;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     animation: fadeInButton 2.5s ease-in-out;
     opacity: 0;
     animation-fill-mode: forwards;
-  }
+    box-shadow: 0 4px 15px rgba(255, 94, 98, 0.5); /* Subtle shadow for depth */
+}
+
+.landing-login-btn:hover {
+    transform: translateY(-3px); /* Lift the button on hover */
+    background: linear-gradient(135deg, #ff9966, #ff5e62); /* Reverse gradient on hover */
+    box-shadow: 0 6px 20px rgba(255, 94, 98, 0.7); /* Darker shadow on hover */
+}
+
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+        transform: translateY(10px); /* Slide in from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Original position */
+    }
+}
+
   
   .landing-login-btn span {
     position: relative;

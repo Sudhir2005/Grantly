@@ -1,62 +1,54 @@
 /* HomePage.css */
+
+/* Background color for the home page */
 .home-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient Background */
-  min-height: 100vh; /* Ensure it covers the full height of the viewport */
+  background-color: #f5f7fa; /* Light gray background for the entire page */
+  min-height: 100vh; /* Full height of the viewport */
+  padding-top: 20px;
 }
 
-.home-page h1 {
-  margin-bottom: 20px;
-  font-size: 2.5rem;
-  color: #fff; /* Change text color for better contrast */
-  text-align: center;
-  font-family: 'Arial', sans-serif;
+/* Style for the document cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+  border: none;
+  border-radius: 8px; /* Rounded corners for the card */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge card on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+}
+
+/* Ensures the image inside the card takes up the entire card width and height */
+.card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  object-fit: cover;
+}
+
+/* Card title */
+.card-title {
   font-weight: bold;
+  font-size: 1.2rem; /* Slightly larger font for the title */
+  color: #333; /* Dark text for better contrast */
+  margin-top: auto; /* Pushes the title to the bottom of the card body */
 }
 
-.documents {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
+/* Margin for the header title */
+h1 {
+  font-size: 2.5rem;
+  color: #2575fc; /* Brand color */
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.document-box {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-}
+/* Styles for responsive behavior of the cards */
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1rem; /* Slightly smaller font on smaller screens */
+  }
 
-.document-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.document-box img {
-  width: 100%;
-  height: auto;
-  border-bottom: 2px solid #007bff;
-}
-
-.document-info {
-  padding: 10px;
-}
-
-.document-info h2 {
-  font-size: 1.2rem;
-  color: #007bff;
-  margin: 0;
-}
-
-.document-info p {
-  font-size: 0.9rem;
-  color: #555;
+  h1 {
+    font-size: 2rem; /* Smaller header on mobile */
+  }
 }
