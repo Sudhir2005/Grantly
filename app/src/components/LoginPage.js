@@ -42,7 +42,7 @@ const LoginPage = () => {
 
       {/* Header */}
       <header className="w-100">
-        <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: 'transparent' }}> {/* Removed bg-white */}
+        <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: 'transparent' }}>
           <div className="container-fluid d-flex flex-column justify-content-center align-items-center" style={{ backgroundColor: 'transparent' }}>
             <div className="d-flex justify-content-center align-items-center">
               <img
@@ -79,6 +79,7 @@ const LoginPage = () => {
 
         {loginType === 'aadhaar' ? (
           <form onSubmit={handleAadhaarLogin}>
+            {/* Aadhaar Number Input */}
             <div className="mb-3">
               <input
                 type="text"
@@ -90,6 +91,8 @@ const LoginPage = () => {
                 required
               />
             </div>
+
+            {/* OTP Input */}
             <div className="mb-3">
               <input
                 type="text"
@@ -101,10 +104,13 @@ const LoginPage = () => {
                 required
               />
             </div>
+
+            {/* Login Button */}
             <button type="submit" className="btn btn-success w-100">Login</button>
           </form>
         ) : (
           <form onSubmit={handleUsernameLogin}>
+            {/* Username Input */}
             <div className="mb-3">
               <input
                 type="text"
@@ -115,6 +121,8 @@ const LoginPage = () => {
                 required
               />
             </div>
+
+            {/* Security Pin Input */}
             <div className="mb-3">
               <input
                 type="password"
@@ -125,6 +133,8 @@ const LoginPage = () => {
                 required
               />
             </div>
+
+            {/* Login Button */}
             <button type="submit" className="btn btn-success w-100">Login</button>
           </form>
         )}

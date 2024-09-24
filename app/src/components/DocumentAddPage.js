@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import imageCompression from 'browser-image-compression';
 import { Link, useNavigate } from 'react-router-dom'; // For navigation to home page
+import CryptoJS from 'crypto-js'; // Importing the crypto-js for hashing
 import './DocumentAddPage.css';
 
 const AddDocumentPage = () => {
@@ -22,6 +23,18 @@ const AddDocumentPage = () => {
     'Caste Certificate',
     'Disability Certificate',
   ];
+
+  // Hash generation function using CryptoJS
+  const generateHash = (file) => {
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      const binaryString = event.target.result;
+      const hash = CryptoJS.SHA256(CryptoJS.enc.Latin1.parse(binaryString)).toString(CryptoJS.enc.Hex);
+      console.log('Document Hash:', hash);
+      // You can send this hash to the server for validation or store it for later comparisons
+    };
+    reader.readAsBinaryString(file);
+  };
 
   const handleFileChange = async (e) => {
     const uploadedFile = e.target.files[0];
@@ -45,19 +58,25 @@ const AddDocumentPage = () => {
     }
   };
 
+  // Updated analyzeDocument to use the hash generation for document analysis
   const analyzeDocument = () => {
     setIsAnalyzing(true);
-    setTimeout(() => {
-      const isFake = Math.random() > 0.5; // Simulate anomaly detection
-      setIsAnalyzing(false);
-      if (!isFake) {
-        alert("Document is Real.");
-        setNextStepEnabled(true);
-      } else {
-        alert("Anomaly Detected: Fake Document!");
-        setNextStepEnabled(false);
-      }
-    }, 2000);
+    if (compressedFile) {
+      generateHash(compressedFile); // Generate the document hash for further use
+      
+      setTimeout(() => {
+        // Simulate document validation by randomly determining if it's valid or not
+        const isValid = Math.random() > 0.5; // Replace this with actual hash validation
+        setIsAnalyzing(false);
+        if (isValid) {
+          alert("Document is Real.");
+          setNextStepEnabled(true);
+        } else {
+          alert("Anomaly Detected: Fake Document!");
+          setNextStepEnabled(false);
+        }
+      }, 2000);
+    }
   };
 
   const handleUpload = () => {
