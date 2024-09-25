@@ -9,10 +9,9 @@ import ProfilePage from './components/ProfilePage';
 import LoginPage from './components/LoginPage';
 import CreateAccountPage from './components/CreateAccountPage';
 import ForgotPinPage from './components/ForgotPinPage';
-import DocumentView from './components/DocumentView';
 import LandingPage from './components/LandingPage'; 
 import Footer from './components/Footer';
-import DocumentUpload from './components/DocumentUpload'; // Import the DocumentUpload component
+import DocumentUpload from './components/DocumentUpload';
 import './App.css';
 
 const App = () => {
@@ -36,7 +35,6 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/create-account" element={<CreateAccountPage />} />
         <Route path="/forgot-pin" element={<ForgotPinPage />} />
-        <Route path="/document/:id" element={<DocumentView />} />
         
         {/* New Route for Document Upload */}
         <Route path="/upload-document" element={<DocumentUpload />} /> {/* Add the upload document route */}

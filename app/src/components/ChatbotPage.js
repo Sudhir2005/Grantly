@@ -9,7 +9,7 @@ const getAIResponse = async (userInput) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}` // Securely use API key
+        'Authorization': `Bearer cd88c04c7f034807a674072f638d00ef` // Securely use API key
       },
       body: JSON.stringify({
         model: 'text-davinci-003', // Replace with the model you are using
